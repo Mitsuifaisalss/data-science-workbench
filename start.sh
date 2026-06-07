@@ -34,23 +34,23 @@ cleanup() {
 }
 trap cleanup EXIT INT TERM
 
-log "Starting backend on http://localhost:8000"
+log "Starting backend on http://localhost:8010"
 (
   cd "$BACKEND_DIR"
   . .venv/bin/activate
-  exec python -m uvicorn main:app --host 0.0.0.0 --port 8000
+  exec python -m uvicorn main:app --host 0.0.0.0 --port 8010
 ) &
 PIDS+=("$!")
 
-log "Starting frontend on http://localhost:5173"
+log "Starting frontend on http://localhost:5174"
 (
   cd "$ROOT_DIR"
-  exec npm run dev -- --host 0.0.0.0 --port 5173
+  exec npm run dev -- --host 0.0.0.0 --port 5174
 ) &
 PIDS+=("$!")
 
 echo
-ok "Both servers starting. Open http://localhost:5173"
+ok "Both servers starting. Open http://localhost:5174"
 echo "Press Ctrl+C to stop."
 
 wait

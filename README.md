@@ -39,8 +39,8 @@ data-science-workbench/
 
 Open:
 
-- Frontend: `http://localhost:5173`
-- Backend health: `http://localhost:8000/api/health`
+- Frontend: `http://localhost:5174`
+- Backend health: `http://localhost:8010/api/health`
 
 ## Public online access
 
@@ -53,7 +53,7 @@ Start the app:
 Then expose it publicly:
 
 ```bash
-cloudflared tunnel --url http://localhost:5173
+cloudflared tunnel --url http://localhost:5174
 ```
 
 Share the generated `https://*.trycloudflare.com` URL.
