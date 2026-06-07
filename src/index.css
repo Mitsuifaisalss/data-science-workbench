@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Geist", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-bg: #111318;
+  --color-bg-elevated: #181A20;
+  --color-bg-card: #1C1E26;
+  --color-bg-hover: #23252E;
+  --color-bg-input: #15171D;
+  --color-border: #2A2D36;
+  --color-border-subtle: #1F2129;
+
+  --color-fg: #EAEAEA;
+  --color-fg-muted: #8B8F99;
+  --color-fg-dim: #5C616B;
+
+  --color-accent: #00D68F;
+  --color-accent-hover: #00B87A;
+  --color-accent-dim: rgba(0, 214, 143, 0.12);
+  --color-accent-glow: rgba(0, 214, 143, 0.25);
+
+  --color-success: #00D68F;
+  --color-warning: #F5A623;
+  --color-danger: #FF4D4F;
+  --color-info: #3B82F6;
+
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--color-bg);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-body);
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img, svg, video, canvas {
+  display: block;
+  max-width: 100%;
+}
+
+button, a, input, textarea, select {
+  font: inherit;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-fg-dim);
+}
+
+/* Table styles */
+.data-table th {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-fg-muted);
+  padding: 10px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+.data-table td {
+  padding: 10px 16px;
+  font-size: 13px;
+  color: var(--color-fg);
+  border-bottom: 1px solid var(--color-border-subtle);
+  white-space: nowrap;
+}
+.data-table tr:hover td {
+  background: var(--color-bg-hover);
+}
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Tab active indicator */
+.tab-active {
+  color: var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
+}
+
+/* Drag and drop zone */
+.drag-zone {
+  border: 2px dashed var(--color-border);
+  transition: all 0.2s ease;
+}
+.drag-zone.drag-over {
+  border-color: var(--color-accent);
+  background: var(--color-accent-dim);
+}
+
+/* Chart tooltip */
+.recharts-tooltip-wrapper {
+  outline: none !important;
+}
+.recharts-default-tooltip {
+  background: var(--color-bg-card) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4) !important;
+}
+.recharts-tooltip-label {
+  color: var(--color-fg) !important;
+  font-weight: 600 !important;
+}
+.recharts-tooltip-item {
+  color: var(--color-fg-muted) !important;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
