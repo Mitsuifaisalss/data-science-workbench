@@ -65,6 +65,7 @@ async def config():
             "frontend": "vite",
             "backend": "fastapi",
             "publicTunnel": "cloudflared",
+            "targetFrontend": os.getenv("PUBLIC_FRONTEND_URL", ""),
         },
     }
 

@@ -58,6 +58,24 @@ cloudflared tunnel --url http://localhost:5174
 
 Share the generated `https://*.trycloudflare.com` URL.
 
+## Permanent deployment
+
+### Frontend on Vercel
+
+- Root directory: project root
+- Framework: Vite
+- Build command: `npm run build`
+- Output directory: `dist`
+
+### Backend on Render
+
+- Use the included `render.yaml`
+- Service root: `backend`
+- Start command: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+- Set:
+  - `CORS_ORIGINS=https://your-vercel-domain.vercel.app`
+  - `PUBLIC_FRONTEND_URL=https://your-vercel-domain.vercel.app`
+
 ## Build
 
 ```bash
